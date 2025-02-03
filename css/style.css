@@ -1,3 +1,9 @@
 body {
     background-color: rgb(206, 192, 255);
 }
+
+.board {
+    display: grid;
+    flex-wrap: wrap;
+    width: 325px;
+  }
