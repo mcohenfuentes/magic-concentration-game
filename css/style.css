@@ -1,9 +1,18 @@
 body {
     background-color: rgb(206, 192, 255);
+    
 }
 
 .board {
-    display: grid;
+    display: flex;
     flex-wrap: wrap;
-    width: 325px;
+    width: 400px;
+  }
+  
+  .card {
+    width: 25%;
+    aspect-ratio: 1/1;
+    border: 3px solid black;
+    font-size: 64px;
+    text-align: center;
   }
