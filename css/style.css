@@ -27,21 +27,25 @@ header {
     background-color: aqua;
   }
 
-  .unicorn::before {
+  .hide > div {
+    visibility: hidden;
+  }
+
+  /* .unicorn {
     content: '🦄';
   }
 
-  .sparkles::before {
+  .sparkles {
     content: '✨';
   }
 
-  .fortune::before {
+  .fortune {
     content: '🔮';
   }
 
-  .wand::before {
+  .wand {
     content: '🪄';
-  }
+  } */
 
   #replay {
     display: block;
