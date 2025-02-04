@@ -5,8 +5,8 @@ const cards = ['✨', '🪄', '🔮', '🦄', '✨', '🪄', '🔮', '🦄']
 
 /*---------------------------- Variables (state) ----------------------------*/
 
-let firstCard = '' 
-let secondCard = '' 
+let firstCard = null
+let secondCard = null 
 let matchedPairs = 0
 let round = 0
 let clicks = 0
@@ -23,23 +23,19 @@ const replayBtnEl = document.querySelector('#replay')
 
 /*-------------------------------- Functions --------------------------------*/
 
-const startGame = () => {
-
+function init() {
+    firstCard = null
+    secondCard = null
+    round = 0
+    clicks = 0
 }
+        
 
 function handleClick(event) {
     let clickedCard = event.target
-    
-    // if clicks are odd the user is still in a round
-    // if clicks are even the user has completed a round
 
     clicks += 1
-    console.log(clicks)
-
-    if (clicks % 2 == 0) {
-        round++
-    } 
-    console.log('round', round)
+    console.log('clicks', clicks)
 
     if (!firstCard) {
         firstCard = clickedCard
@@ -49,28 +45,37 @@ function handleClick(event) {
         secondCard = clickedCard
         console.log('second card', secondCard.innerText)
         round += 1
-        console.log(round)
+        console.log('round', round)
     }
 
     if (firstCard.innerText === secondCard.innerText) {
         console.log('match!')
         matchedPairs += 1
-        // firstCard = ''
-        // secondCard = ''
+        
     } else {
         console.log(firstCard.innerText)
         console.log(secondCard.innerText)
         console.log('not a match')
-        // firstCard = ''
-        // secondCard = ''
     }
-    if (round === 6 && matchedPairs !== 4) {
-        console.log('lose')
-    }
-    else if (matchedPairs === 4) {
+
+    resetTurn()
+    
+
+    if (matchedPairs === 4) {
         console.log('win!')
     }
+    else if (round === 5 && matchedPairs !== 4) {
+        console.log('lose!')
+    
+        
+    }     
 }
+    const resetTurn = () => {
+        firstCard = null
+        secondCard = null
+    }
+
+
 // how to bridge btw rounds and matches?
 //     check to see if both cards match first card === second card
 // if they do match cards stay facing up and set first card and second 
