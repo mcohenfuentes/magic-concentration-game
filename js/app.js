@@ -39,7 +39,7 @@ function handleClick(event) {
     if (clicks % 2 == 0) {
         round++
     } 
-    console.log(round)
+    console.log('round', round)
 
     if (!firstCard) {
         firstCard = clickedCard
@@ -54,13 +54,22 @@ function handleClick(event) {
 
     if (firstCard.innerText === secondCard.innerText) {
         console.log('match!')
+        matchedPairs += 1
+        // firstCard = ''
+        // secondCard = ''
     } else {
+        console.log(firstCard.innerText)
+        console.log(secondCard.innerText)
         console.log('not a match')
+        // firstCard = ''
+        // secondCard = ''
     }
-    if (round = 6 && matchedPairs != 4) {
+    if (round === 6 && matchedPairs !== 4) {
         console.log('lose')
     }
-        
+    else if (matchedPairs === 4) {
+        console.log('win!')
+    }
 }
 // how to bridge btw rounds and matches?
 //     check to see if both cards match first card === second card
@@ -69,13 +78,7 @@ function handleClick(event) {
 // if they dont match cards flip back over
 // after click o first card and 
 
-// if (!firstCard) {
-//     firstCard = null
-//     console.log('first card', firstCard.innerText)
-// } else {
-//     secondCard = null
-//     console.log('second card', secondCard.innerText)
-// }
+
 
 /*----------------------------- Event Listeners -----------------------------*/
 
