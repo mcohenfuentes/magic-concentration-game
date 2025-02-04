@@ -26,26 +26,26 @@ const replayBtnEl = document.querySelector('#replay')
 /*-------------------------------- Functions --------------------------------*/
 
 
-cards.forEach(function(emoji) {
-   const card = document.createElement('div')
-   const cardChild = document.createElement('div')
-   card.classList.add('card')
-   if (emoji === '✨') {
-    card.classList.add('sparkle')
-    card.appendChild(cardChild)
-    cardChild.innerText = '✨'
-   } else if (emoji === '🪄') {
-    card.classList.add('wand')
-    card.innerText = '🪄'
-   } else if (emoji === '🔮') {
-    card.classList.add('fortune')
-    card.innerText = '🔮'
-   } else if (emoji === '🦄') {
-    card.classList.add('unicorn')
-    card.innerText = '🦄'
-   }
-   board.appendChild(card)
-}) 
+cards.forEach(function (emoji) {
+    const card = document.createElement('div')
+    const cardChild = document.createElement('div')
+    card.classList.add('card')
+    if (emoji === '✨') {
+        card.classList.add('sparkle')
+        card.appendChild(cardChild)
+        cardChild.innerText = '✨'
+    } else if (emoji === '🪄') {
+        card.classList.add('wand')
+        card.innerText = '🪄'
+    } else if (emoji === '🔮') {
+        card.classList.add('fortune')
+        card.innerText = '🔮'
+    } else if (emoji === '🦄') {
+        card.classList.add('unicorn')
+        card.innerText = '🦄'
+    }
+    board.appendChild(card)
+})
 
 const cardEls = document.querySelectorAll('.card')
 // function init() {
@@ -97,16 +97,18 @@ function handleClick(event) {
         console.log('second card', secondCard.innerText)
         round += 1
         console.log('round', round)
-        
-    }
 
-    if (firstCard.innerText === secondCard.innerText) {
-        console.log('match!')
+        if (firstCard.innerText === secondCard.innerText) {
+            console.log('match!')
 
-        firstCard.removeEventListener('click', handleClick)
-        secondCard.removeEventListener('click', handleClick)
+            firstCard.removeEventListener('click', handleClick)
+            secondCard.removeEventListener('click', handleClick)
 
-        matchedPairs += 1
+            matchedPairs += 1
+            resetTurn()
+        }
+
+
 
     } else {
         console.log(firstCard.innerText)
@@ -118,7 +120,7 @@ function handleClick(event) {
 
     }
 
-    resetTurn()
+
 
 
     if (matchedPairs === 4) {
