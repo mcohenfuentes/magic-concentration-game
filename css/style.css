@@ -10,7 +10,7 @@ header {
 .board {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(2, 1fr)
+    grid-template-rows: repeat(2, 1fr);
     gap: 10px;
     width: 500px;
     height: 250px;
@@ -25,6 +25,22 @@ header {
     font-size: 64px;
     text-align: center;
     background-color: aqua;
+  }
+
+  .unicorn::before {
+    content: '🦄';
+  }
+
+  .sparkles::before {
+    content: '✨';
+  }
+
+  .fortune::before {
+    content: '🔮';
+  }
+
+  .wand::before {
+    content: '🪄';
   }
 
   #replay {
