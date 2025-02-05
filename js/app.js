@@ -1,6 +1,6 @@
 /*-------------------------------- Constants --------------------------------*/
 
-const cardEmojis = ['✨', '🪄', '🔮', '🦄', '✨', '🪄', '🔮', '🦄']
+const myArray = ['✨', '🪄', '🔮', '🦄', '✨', '🪄', '🔮', '🦄']
 
 
 /*---------------------------- Variables (state) ----------------------------*/
@@ -29,6 +29,7 @@ const roundEl = document.querySelector('#round')
 /*-------------------------------- Functions --------------------------------*/
 
 function init() {
+    
     firstCard = null
     secondCard = null
     matchedPairs = 0;
@@ -36,12 +37,27 @@ function init() {
     clicks = 0;
     messageEl.innerText = 'Match the emojis to win!'
 
+    //Asked google where to place roundEl so it would display 0 and for each loop 
+    // so game would reset
     roundEl.innerText = `Round ${round}`
 
     cardEls.forEach(card => {
         card.classList.remove('is-flipped')
-    })
-}
+
+    });
+
+    function shuffleArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [array[i], array[j]] = [array[j], array[i]];
+        }
+      }
+      shuffleArray(myArray)
+      console.log(myArray)
+
+    }
+
+    
 
 
 function handleClick(event) {
