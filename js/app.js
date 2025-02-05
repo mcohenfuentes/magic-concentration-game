@@ -34,79 +34,6 @@ function init() {
     messageEl.innerText = 'Match the emojis to win!'
 }
 
-// cards.forEach(function (emoji) {
-//     const card = document.createElement('div')
-//     const cardChild = document.createElement('div')
-//     card.classList.add('card')
-//     if (emoji === '✨') {
-//         card.classList.add('sparkle')
-//         card.appendChild(cardChild)
-//         cardChild.innerText = '✨'
-//     } else if (emoji === '🪄') {
-//         card.classList.add('wand')
-//         card.innerText = '🪄'
-//     } else if (emoji === '🔮') {
-//         card.classList.add('fortune')
-//         card.innerText = '🔮'
-//     } else if (emoji === '🦄') {
-//         card.classList.add('unicorn')
-//         card.innerText = '🦄'
-//     }
-//     board.appendChild(card)
-// })
-
-
-
-
-// cardEls.forEach(function (card) {
-//     if (card.classList.contains('unicorn')) {
-//         card.addEventListener('click', function(event){
-//             event.target.classList.toggle('unicorn')
-//         })
-//     } else if (card.classList.contains('sparkles')) {
-//         card.addEventListener('click', function(event){
-//             event.target.classList.toggle('sparkles')
-//         })
-//     } else if (card.classList.contains('fortune')) {
-//         card.addEventListener('click', function(event){
-//             event.target.classList.toggle('fortune')
-//         })
-//     } else if (card.classList.contains('wand')) {
-//         card.addEventListener('click', function(event){
-//             event.target.classList.toggle('wand')
-//         })
-//     }
-// }) 
-
-
-// cardEls.forEach(function (card) {
-//     card.addEventListener('click', function(event){
-//     })
-// }) 
-
-// const card = document.getElementByClass('card')
-// card.classList.toggle('hide');
-// function updateMessage() {
-//     if (matchedPairs === 4) {
-//         messageEl.innerText = 'You won!'
-//     }
-//     }
-// function flipCard() {
-//     this.classList.toggle('flip');
-
-//     if(!cardIsFlipped) {
-//         cardIsFlipped = true
-//         firstCard = this
-//     } else {
-//         cardIsFlipped = false
-//         secondCard = this
-//     }
-// }
-
-// cardEls.forEach(function (card) {
-//     card.addEventListener('click', flipCard)
-// });
-
 
 function handleClick(event) {
     let clickedCard = event.target
@@ -136,11 +63,6 @@ function handleClick(event) {
             console.log(firstCard.innerText)
             console.log(secondCard.innerText)
             console.log('not a match')
-
-
-            
-
-
         }
 
         resetTurn();
@@ -164,11 +86,6 @@ const resetTurn = () => {
 
 
 
-// init()
-
-
-
-
 /*----------------------------- Event Listeners -----------------------------*/
 
 cardEls.forEach(card => {
@@ -176,3 +93,11 @@ cardEls.forEach(card => {
 });
 
 replayBtnEl.addEventListener('click', init)
+
+// worked with Ben on this function and Google
+cardEls.forEach((card) => {
+    card.addEventListener('click', function() {
+      card.classList.toggle('is-flipped');
+    });
+  });
+  
