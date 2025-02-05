@@ -25,7 +25,15 @@ const replayBtnEl = document.querySelector('#replay')
 
 /*-------------------------------- Functions --------------------------------*/
 
-
+function init() {
+    firstCard = null;
+    secondCard = null;
+    matchedPairs = 0;
+    round = 0;
+    clicks = 0;
+    messageEl.innerText = 'Match the emojis to win!'
+    console.log('init function was called')
+}
 cards.forEach(function (emoji) {
     const card = document.createElement('div')
     const cardChild = document.createElement('div')
@@ -48,12 +56,8 @@ cards.forEach(function (emoji) {
 })
 
 const cardEls = document.querySelectorAll('.card')
-// function init() {
-//     firstCard = null
-//     secondCard = null
-//     round = 0
-//     clicks = 0
-// }
+
+
 // cardEls.forEach(function (card) {
 //     if (card.classList.contains('unicorn')) {
 //         card.addEventListener('click', function(event){
@@ -82,8 +86,15 @@ const cardEls = document.querySelectorAll('.card')
 
 // const card = document.getElementByClass('card')
 // card.classList.toggle('hide');
+// function updateMessage() {
+//     if (matchedPairs === 4) {
+//         messageEl.innerText = 'You won!'
+//     }
+//     }
+
 
 function handleClick(event) {
+    cards.removeEventListener
     let clickedCard = event.target
     clicks += 1
     console.log('clicks', clicks)
@@ -91,6 +102,7 @@ function handleClick(event) {
     if (!firstCard) {
         firstCard = clickedCard
         console.log('first card', firstCard.innerText)
+       
 
     } else if (!secondCard) {
         secondCard = clickedCard
@@ -100,36 +112,38 @@ function handleClick(event) {
 
         if (firstCard.innerText === secondCard.innerText) {
             console.log('match!')
-
-            firstCard.removeEventListener('click', handleClick)
-            secondCard.removeEventListener('click', handleClick)
+            console.log(firstCard)
+            console.log(secondCard)
 
             matchedPairs += 1
-            resetTurn()
-        }
-
-
+            
+            firstCard.removeEventListener('click', handleClick)
+            secondCard.removeEventListener('click', handleClick)
 
     } else {
         console.log(firstCard.innerText)
         console.log(secondCard.innerText)
         console.log('not a match')
 
-        firstCard.removeEventListener('click', handleClick)
-        secondCard.removeEventListener('click', handleClick)
+        // firstCard.removeEventListener('click', handleClick)
+        // secondCard.removeEventListener('click', handleClick)
 
     }
+        resetTurn();
+        
+    }
 
-
-
+    
 
     if (matchedPairs === 4) {
+        messageEl.innerText = 'You win!'
         console.log('win!')
     }
     else if (round === 5 && matchedPairs !== 4) {
+        messageEl.innerText = 'You lose, try again!'
         console.log('lose!')
 
-
+        
     }
 }
 const resetTurn = () => {
@@ -137,13 +151,8 @@ const resetTurn = () => {
     secondCard = null
 }
 
+// init()
 
-// how to bridge btw rounds and matches?
-//     check to see if both cards match first card === second card
-// if they do match cards stay facing up and set first card and second 
-// card to null again 
-// if they dont match cards flip back over
-// after click o first card and 
 
 
 
@@ -152,3 +161,5 @@ const resetTurn = () => {
 cardEls.forEach(card => {
     card.addEventListener('click', handleClick);
 });
+
+replayBtnEl.addEventListener('click', init)
