@@ -38,6 +38,10 @@ header {
     transform: rotateY(180deg);
   }
 
+  /* .card.not-flipped .card-inner {
+    transform: rotateY(180deg);
+  } */
+
   .card-front, .card-back {
     position: absolute;
     width: 100%;
