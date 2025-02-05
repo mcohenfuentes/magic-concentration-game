@@ -5,18 +5,18 @@ const cards = ['✨', '🪄', '🔮', '🦄', '✨', '🪄', '🔮', '🦄']
 
 /*---------------------------- Variables (state) ----------------------------*/
 
-let firstCard = null
-let secondCard = null
+let firstCard = null;
+let secondCard = null;
 let matchedPairs = 0
 let round = 0
 let clicks = 0
-
+let cardIsFlipped = false;
 
 /*------------------------ Cached Element References ------------------------*/
 
 const board = document.querySelector('.board')
 
-
+const cardEls = document.querySelectorAll('.card')
 
 const messageEl = document.querySelector('#message')
 
@@ -32,30 +32,30 @@ function init() {
     round = 0;
     clicks = 0;
     messageEl.innerText = 'Match the emojis to win!'
-    console.log('init function was called')
 }
-cards.forEach(function (emoji) {
-    const card = document.createElement('div')
-    const cardChild = document.createElement('div')
-    card.classList.add('card')
-    if (emoji === '✨') {
-        card.classList.add('sparkle')
-        card.appendChild(cardChild)
-        cardChild.innerText = '✨'
-    } else if (emoji === '🪄') {
-        card.classList.add('wand')
-        card.innerText = '🪄'
-    } else if (emoji === '🔮') {
-        card.classList.add('fortune')
-        card.innerText = '🔮'
-    } else if (emoji === '🦄') {
-        card.classList.add('unicorn')
-        card.innerText = '🦄'
-    }
-    board.appendChild(card)
-})
 
-const cardEls = document.querySelectorAll('.card')
+// cards.forEach(function (emoji) {
+//     const card = document.createElement('div')
+//     const cardChild = document.createElement('div')
+//     card.classList.add('card')
+//     if (emoji === '✨') {
+//         card.classList.add('sparkle')
+//         card.appendChild(cardChild)
+//         cardChild.innerText = '✨'
+//     } else if (emoji === '🪄') {
+//         card.classList.add('wand')
+//         card.innerText = '🪄'
+//     } else if (emoji === '🔮') {
+//         card.classList.add('fortune')
+//         card.innerText = '🔮'
+//     } else if (emoji === '🦄') {
+//         card.classList.add('unicorn')
+//         card.innerText = '🦄'
+//     }
+//     board.appendChild(card)
+// })
+
+
 
 
 // cardEls.forEach(function (card) {
@@ -91,18 +91,33 @@ const cardEls = document.querySelectorAll('.card')
 //         messageEl.innerText = 'You won!'
 //     }
 //     }
+// function flipCard() {
+//     this.classList.toggle('flip');
+
+//     if(!cardIsFlipped) {
+//         cardIsFlipped = true
+//         firstCard = this
+//     } else {
+//         cardIsFlipped = false
+//         secondCard = this
+//     }
+// }
+
+// cardEls.forEach(function (card) {
+//     card.addEventListener('click', flipCard)
+// });
 
 
 function handleClick(event) {
-    cards.removeEventListener
     let clickedCard = event.target
+    if (clickedCard === firstCard) return;
     clicks += 1
     console.log('clicks', clicks)
 
     if (!firstCard) {
         firstCard = clickedCard
         console.log('first card', firstCard.innerText)
-       
+        return;
 
     } else if (!secondCard) {
         secondCard = clickedCard
@@ -116,24 +131,20 @@ function handleClick(event) {
             console.log(secondCard)
 
             matchedPairs += 1
+
+        } else {
+            console.log(firstCard.innerText)
+            console.log(secondCard.innerText)
+            console.log('not a match')
+
+
             
-            firstCard.removeEventListener('click', handleClick)
-            secondCard.removeEventListener('click', handleClick)
 
-    } else {
-        console.log(firstCard.innerText)
-        console.log(secondCard.innerText)
-        console.log('not a match')
 
-        // firstCard.removeEventListener('click', handleClick)
-        // secondCard.removeEventListener('click', handleClick)
+        }
 
-    }
         resetTurn();
-        
     }
-
-    
 
     if (matchedPairs === 4) {
         messageEl.innerText = 'You win!'
@@ -143,13 +154,15 @@ function handleClick(event) {
         messageEl.innerText = 'You lose, try again!'
         console.log('lose!')
 
-        
+
     }
 }
 const resetTurn = () => {
     firstCard = null
     secondCard = null
 }
+
+
 
 // init()
 

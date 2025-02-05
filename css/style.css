@@ -27,25 +27,18 @@ header {
     background-color: aqua;
   }
 
-  .hide > div {
-    visibility: hidden;
+  .card:active {
+    transform: scale(0.97);
+    transition: transform 0.15s ease out;
   }
 
-  /* .unicorn {
-    content: '🦄';
+  .front-face {
+    transform: rotateY(0.5turn)
   }
-
-  .sparkles {
-    content: '✨';
+  
+  .card.flip {
+    transform: rotateY(180deg) perspective(1000px);
   }
-
-  .fortune {
-    content: '🔮';
-  }
-
-  .wand {
-    content: '🪄';
-  } */
 
   #replay {
     display: block;
