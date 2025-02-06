@@ -35,7 +35,7 @@ function init() {
     matchedPairs = 0;
     round = 0;
     clicks = 0;
-    messageEl.innerText = 'Match the emojis to win!'
+    messageEl.innerText = 'Match the magic emojis to win!'
 
     //Asked google where to place roundEl so it would display 0 and for each loop 
     // so game would reset
@@ -105,10 +105,10 @@ function handleClick(event) {
     }
    // console.log(matchedPairs)
     if (matchedPairs === 4) {
-        messageEl.innerText = '🎉You win!🎉'
+        messageEl.innerText = '🎉 You win! 🎉'
         console.log('win!')
     }
-    else if (round === 5 && matchedPairs !== 4) {
+    else if (round === 6 && matchedPairs !== 4) {
         messageEl.innerText = 'You lose, try again!'
         console.log('lose!')
 
