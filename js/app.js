@@ -13,6 +13,7 @@ let matchedPairs = 0
 let round = 0
 let clicks = 0
 let cardIsFlipped = false;
+let gameOver = false;
 
 /*------------------------ Cached Element References ------------------------*/
 
@@ -50,6 +51,7 @@ function init() {
 
     firstCard = null
     secondCard = null
+    gameOver = false;
     matchedPairs = 0;
     round = 0;
     clicks = 0;
@@ -73,66 +75,66 @@ function init() {
     }
 
     shuffleArray(myArray);
-    console.log(myArray)
+
+    // troubleshooted with Kaya on how to attach html to array
 
     const card1 = myArray[0]
     card1Magic.innerText = card1
-    
+
     const card2 = myArray[1]
     card2Magic.innerText = card2
-    
+
     const card3 = myArray[2]
     card3Magic.innerText = card3
-    
+
     const card4 = myArray[3]
     card4Magic.innerText = card4
-    
+
     const card5 = myArray[4]
     card5Magic.innerText = card5
-    
+
     const card6 = myArray[5]
     card6Magic.innerText = card6
-   
+
     const card7 = myArray[6]
     card7Magic.innerText = card7
-    
+
     const card8 = myArray[7]
     card8Magic.innerText = card8
 }
 
 
 function handleClick(event) {
+    if (gameOver) return;
+    
     let clickedCard = event.currentTarget
+    
+    if (clickedCard.classList.contains('matched')) return;
+
     clickedCard.classList.toggle('is-flipped')
-    console.log(clickedCard.innerText)
-    // if (clickedCard === firstCard) return;
+
     clicks += 1
-    //console.log('clicks', clicks)
+
 
     if (!firstCard) {
         firstCard = clickedCard
-        console.log('first card', firstCard.innerText)
         return;
 
     } else if (!secondCard) {
         secondCard = clickedCard
-        console.log('second card', secondCard.innerText)
         round += 1
         roundEl.innerText = `Round ${round}`
-        // console.log(firstCard.innerText)
-        // console.log(secondCard.innerText)
-        if (firstCard.innerText === secondCard.innerText) {
-            console.log('match!')
-            // console.log(firstCard)
-            // console.log(secondCard)
 
+        if (firstCard.innerText === secondCard.innerText) {
             matchedPairs += 1
+
+            firstCard.classList.add('matched');
+            secondCard.classList.add('matched');
+
             resetTurn();
 
         } else {
-            console.log('not a match')
-            console.log(firstCard)
-            console.log(secondCard)
+
             setTimeout(() => {
                 // Asked chatGPT how to remove a class
                 firstCard.classList.remove('is-flipped');
@@ -143,14 +145,14 @@ function handleClick(event) {
         }
 
     }
-    // console.log(matchedPairs)
+
     if (matchedPairs === 4) {
         messageEl.innerText = '🎉 You win! 🎉'
-        console.log('win!')
+        gameOver = true;
     }
-    else if (round === 6 && matchedPairs !== 4) {
+    else if (round === 7 && matchedPairs !== 4) {
         messageEl.innerText = 'You lose, try again!'
-        console.log('lose!')
+        gameOver = true;
     }
 }
 const resetTurn = () => {
@@ -168,9 +170,3 @@ cardEls.forEach(card => {
 
 replayBtnEl.addEventListener('click', init)
 
-// worked with Ben on this function and Google
-// cardEls.forEach((card) => {
-//     card.addEventListener('click', function() {
-//       card.classList.toggle('is-flipped');
-//     });
-//   });
