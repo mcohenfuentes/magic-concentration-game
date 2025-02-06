@@ -52,7 +52,8 @@ function init() {
           [array[i], array[j]] = [array[j], array[i]];
         }
       }
-      shuffleArray(myArray)
+      //const myArray = ['✨', '🪄', '🔮', '🦄', '✨', '🪄', '🔮', '🦄']
+      shuffleArray(myArray);
       console.log(myArray)
 
     }
