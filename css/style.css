@@ -8,7 +8,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: "Fantasy", "Papyrus";
-    background: linear-gradient(#121212, #1a237e);
+    background: linear-gradient(blue, yellow);
 }
 
 h1, h2, h3, p, header, .board, .card {
@@ -104,8 +104,8 @@ header {
     border-radius: 10px;
     border: 3px solid rgb(0, 0, 0);
     font-family: Fantasy, Papyrus;
-    background: linear-gradient(#ffcc00, #ff4500);
-    color: black; 
+    background: linear-gradient(purple, blue);
+    color: white; 
     cursor: pointer
 
     
