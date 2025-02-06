@@ -27,3 +27,13 @@ Concentration was one of my favorite games growing up. I wanted to create and vi
 * [CSS Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
 * [CSS selectors](https://www.w3schools.com/css/css_selectors.asp)
 * [MDN setTimeout() method](https://developer.mozilla.org/en-US/docs/Web/API/Window/setTimeout)
+* [Google AI Assistant](https://www.google.com/search?q=how+to+shuffle+with+a+nodelist+javascript&oq=how+to+sh&gs_lcrp=EgZjaHJvbWUqCAgAEEUYJxg7MggIABBFGCcYOzIOCAEQRRgnGDsYgAQYigUyBggCEEUYOzIGCAMQRRg5MgcIBBAAGIAEMgYIBRBFGDwyBggGEEUYPDIGCAcQRRg80gEIMzQ0OWowajeoAgCwAgA&sourceid=chrome&ie=UTF-8)
+
+## 🛠️ Technologies used
+* HTML
+* Javascript
+* CSS
+
+## 🚀 Next steps/ Stretch goals
+* Adding more cards
+* Adding difficulty levels
