@@ -64,6 +64,7 @@ function init() {
 
     });
 
+    //found on google
     function shuffleArray(array) {
         for (let i = array.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
@@ -71,53 +72,34 @@ function init() {
         }
     }
 
-    shuffleArray(array);
-    console.log(array)
+    shuffleArray(myArray);
+    console.log(myArray)
 
     const card1 = myArray[0]
     card1Magic.innerText = card1
+    
     const card2 = myArray[1]
     card2Magic.innerText = card2
+    
     const card3 = myArray[2]
     card3Magic.innerText = card3
+    
     const card4 = myArray[3]
     card4Magic.innerText = card4
+    
     const card5 = myArray[4]
     card5Magic.innerText = card5
-    const card4 = myArray[3]
-    card2Magic.innerText = card4
-    const card4 = myArray[3]
-    card2Magic.innerText = card4
-    const card4 = myArray[3]
-    card2Magic.innerText = card4
+    
+    const card6 = myArray[5]
+    card6Magic.innerText = card6
+   
+    const card7 = myArray[6]
+    card7Magic.innerText = card7
+    
+    const card8 = myArray[7]
+    card8Magic.innerText = card8
 }
 
-
-// function updateBoard() {
-//     board.forEach((card, index) => {
-//         console.log(card)
-//         if (card === '🦄') {
-//             cardEls[index].innerText = '🦄'
-//         } else if (card === '🦄') {
-//             cardEls[index].innerText = '🦄'
-//         } else if (card === '✨') {
-//             cardEls[index].innerText = '✨'
-//         } else if (card === '✨') {
-//             cardEls[index].innerText = '✨'
-//         } else if (card === '🪄') {
-//             cardEls[index].innerText = '🪄'
-//         } else if (card === '🪄') {
-//             cardEls[index].innerText = '🪄'
-//         } else if (card === '🔮') {
-//             cardEls[index].innerText = '🔮'
-//         } else if (card === '🔮') {
-//             cardEls[index].innerText = '🔮'
-//         } 
-//     })
-// }
-// I need to show my shuffled cards in the browser
-// I need to bring my js shuffled cards and pushing back into html
-// connect nodelist to innertext
 
 function handleClick(event) {
     let clickedCard = event.currentTarget
@@ -156,7 +138,7 @@ function handleClick(event) {
                 firstCard.classList.remove('is-flipped');
                 secondCard.classList.remove('is-flipped');
                 resetTurn();
-            }, 2000);
+            }, 1000);
 
         }
 
