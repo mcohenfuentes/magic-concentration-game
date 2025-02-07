@@ -7,8 +7,6 @@ const myArray = ['✨', '🪄', '🔮', '🦄', '✨', '🪄', '🔮', '🦄']
 
 let firstCard
 let secondCard
-let emojiOne
-let emojiTwo
 let matchedPairs = 0
 let round = 0
 let clicks = 0
@@ -61,6 +59,8 @@ function init() {
     // so game would reset
     roundEl.innerText = `Round ${round}`
 
+    document.getElementById('replay').style.display = 'none';
+
     cardEls.forEach(card => {
         card.classList.remove('is-flipped')
 
@@ -106,9 +106,9 @@ function init() {
 
 function handleClick(event) {
     if (gameOver) return;
-    
+
     let clickedCard = event.currentTarget
-    
+
     if (clickedCard.classList.contains('matched')) return;
 
     clickedCard.classList.toggle('is-flipped')
