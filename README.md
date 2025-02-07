@@ -35,7 +35,6 @@ Concentration was one of my favorite games growing up. I wanted to create and vi
 * CSS
 
 ## 🚀 Next steps/ Stretch goals
-* Making game playable on mobile
 * Adding more cards
 * Adding a logo to front of cards and more style to make them look like real playing cards
 * Adding difficulty levels
