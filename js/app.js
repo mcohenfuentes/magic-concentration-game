@@ -115,6 +115,9 @@ function handleClick(event) {
 
     clicks += 1
 
+    if (round === 0) {
+        document.getElementById('replay').style.display = 'block';
+    }
 
     if (!firstCard) {
         firstCard = clickedCard

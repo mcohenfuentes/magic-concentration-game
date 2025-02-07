@@ -89,13 +89,13 @@ header {
   
   .card-back {
     background-color: aqua;
-    background: linear-gradient(pink, aqua);
+    background: linear-gradient(blue, aqua);
     color: white;
     transform: rotateY(180deg);
   }
 
   #replay {
-    display: block;
+    display: none;
     margin-top: 35px;
     margin-bottom: 10px;
     padding: 10px 20px;
@@ -106,7 +106,7 @@ header {
     border-radius: 10px;
     border: 3px solid rgb(0, 0, 0);
     font-family: Fantasy, Papyrus;
-    background: linear-gradient(purple, blue);
+    background: linear-gradient(135deg, #6A0DAD, #8A2BE2);
     color: white; 
     cursor: pointer
 
