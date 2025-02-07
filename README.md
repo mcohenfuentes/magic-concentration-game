@@ -1,9 +1,6 @@
-# 🪄 Magic Concentration Game ✨
-
 ![Screenshot of game](/images/magic%20game.png)
 
-
-## About the Game
+# About 🪄 Magic Concentration Game ✨
 **Magic Concentration Game** is a fun and interactive memory game. A player flips over *magical* cards to find matching *magical* pairs. The player has **7 rounds** to match **all pairs** before they run out of turns.
 
 ## Why This Game?
