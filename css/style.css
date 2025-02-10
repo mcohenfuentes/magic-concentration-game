@@ -16,8 +16,13 @@ h1, h2, h3, p {
     color: white;
     margin-bottom: 10px;
     text-align: center;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3)
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
+
+.emoji {
+    margin-top: 36%;
+}
+
 h3 {
     font-size: 32px; 
     font-weight: bold; 
@@ -90,6 +95,7 @@ header {
     font-weight: bold;
     border-radius: 10px;
     background-size: cover;
+    
   }
   
   .card-front {
