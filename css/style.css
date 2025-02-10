@@ -19,6 +19,7 @@ h1, h2, h3, p {
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
+/*Ben helped me figure .emoji out*/
 .emoji {
     margin-top: 36%;
 }
@@ -99,7 +100,6 @@ header {
   }
   
   .card-front {
-    /* background-color: rgb(255, 184, 77); */
     background: linear-gradient(145deg, #6D1B7B, #4A148C, #9B59B6);
     color: black;
   }
