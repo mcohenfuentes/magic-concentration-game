@@ -63,7 +63,7 @@ function init() {
 
     cardEls.forEach(card => {
         card.classList.remove('is-flipped', 'matched')
-        card.style.width = "100px";  // Ensures size stays the same
+        card.style.width = "100px";  
         card.style.height = "150px";
     });
 

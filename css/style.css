@@ -50,19 +50,18 @@ header {
   }
   
   .card {
-    width: 120px;  /* Set a fixed width */
-    height: 180px; /* Set a fixed height */
+    width: 120px;  
+    height: 180px; 
     display: flex;
     align-items: center;
     justify-content: center;
     border: 3px solid black;
     font-size: 48px;
     text-align: center;
-    line-height: 1;
     border-radius: 10px;
-    background-color: transparent; /* Ensures background stays consistent */
+    background-color: transparent; 
     overflow: hidden;
-    position: relative; /* Prevents content from affecting size */
+    position: relative; 
 }
 /*from google */
   .card-inner {
@@ -90,18 +89,17 @@ header {
     justify-content: center;
     font-weight: bold;
     border-radius: 10px;
+    background-size: cover;
   }
   
   .card-front {
-    background-color: rgb(255, 184, 77);
+    /* background-color: rgb(255, 184, 77); */
     background: linear-gradient(145deg, #6D1B7B, #4A148C, #9B59B6);
     color: black;
   }
   
   .card-back {
-    background-color: aqua;
     background: linear-gradient(145deg, #1976D2, #2196F3, #1565C0);
-    color: white;
     transform: rotateY(180deg);
   }
 
@@ -118,8 +116,6 @@ header {
     border: 3px solid rgb(0, 0, 0);
     font-family: Fantasy, Papyrus;
     background: linear-gradient(145deg, #8E44AD, #6A0DAD, #9B59B6);
-    color: white; 
-    cursor: pointer
   }
 
   
