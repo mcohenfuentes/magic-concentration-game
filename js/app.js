@@ -62,8 +62,9 @@ function init() {
     document.getElementById('replay').style.display = 'none';
 
     cardEls.forEach(card => {
-        card.classList.remove('is-flipped')
-
+        card.classList.remove('is-flipped', 'matched')
+        card.style.width = "100px";  // Ensures size stays the same
+        card.style.height = "150px";
     });
 
     //found on google
